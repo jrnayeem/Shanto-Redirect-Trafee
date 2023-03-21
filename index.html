@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style2.css">
+<script src="script.js"></script>
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/logo192.png" />
+  <title>Private Profile</title>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+  </script>
+</head>
+<body onload="myFunction()">
+  <img src="img/300.jpg" alt="Profile Picture">
+  <button id="myButton">View my profile</button>
+  <script>
+    function myFunction() {
+      var app = "vnd.youtube://youtube.com/redirect?event=comments&redir_token=QUFFLUhqbWpqTVRxUFgzdW9zcERxclRHbkRhb0JDSkFVd3xBQ3Jtc0tsUlNKTkEzQ3dyTWFZXzNCMGlRbDFRMF9hTWY1ZDlhanAxTUtVOUdmZ0xyQUVwSnBiR0tHTHdLYU43MjJsdlp3NWE5VldURTBXcnpxZjlpbnk2NEZQOElPcFVhcTg5NmJtX0c1Q2EweUxYVjJnejJscw&q=https%3A%2F%2Fv.ht%2Fio1hb&html_redirect=1";
+      var desktopFallback = "https://v.ht/io1hb";
+
+      if(/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        window.location.href = app;
+        window.setTimeout(function() {
+          window.location.href = mobileFallback;
+        }, 25);
+      } else {
+        window.location.href = desktopFallback;
+      }
+	  
+	   function killPopup() {
+        window.removeEventListener('pagehide', killPopup);
+    }
+
+    window.addEventListener('pagehide', killPopup);
+    }
+
+    var button = document.getElementById("myButton");
+    button.click();
+  </script>
+    <br>
+    <div class="container">
+        <h1>If you can't access the site, copy the link by clicking on the "COPY LINK" button and Paste it to any browser</h1>
+        <input type="text" id="text-to-copy" value="https://v.ht/io1hb" readonly>
+        <button id="copy-button" onclick="copyToClipboard()">Copy Link</button>
+    </div>
+
+</body>
+</html>
